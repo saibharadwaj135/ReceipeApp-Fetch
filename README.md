@@ -3,9 +3,12 @@ The Recipe App is a SwiftUI-based application that fetches and displays a list o
 It features a clean user interface with a navigation stack that allows users to tap on a recipe and view its detailed information. 
 I used MVVM architecture with @EnvironmentObject for shared state, and async/await with URLSession for asynchronous data fetching.
 Below are the screenShots:
-![Simulator Screenshot - iPhone 16 Pro - 2025-04-12 at 15 22 01](https://github.com/user-attachments/assets/48c3e9e6-2173-4482-985a-5570b7c0a878)
-![Simulator Screenshot - iPhone 16 Pro - 2025-04-12 at 15 22 09](https://github.com/user-attachments/assets/9f127ca1-198c-4af7-9a68-350626aa5340)
-![Simulator Screenshot - iPhone 16 Pro - 2025-04-12 at 15 22 22](https://github.com/user-attachments/assets/7d348b98-8dca-48e4-b795-05de8b2a7184)
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/48c3e9e6-2173-4482-985a-5570b7c0a878" alt="Screenshot 1" width="250"/>
+  <img src="https://github.com/user-attachments/assets/9f127ca1-198c-4af7-9a68-350626aa5340" alt="Screenshot 2" width="250"/>
+  <img src="https://github.com/user-attachments/assets/7d348b98-8dca-48e4-b795-05de8b2a7184" alt="Screenshot 3" width="250"/>
+</p>
+
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 I focused primarily on the following areas:
