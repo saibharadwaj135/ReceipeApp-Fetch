@@ -11,37 +11,45 @@ struct ReceipeListView: View {
     @EnvironmentObject var viewModel : ViewModel
     var body: some View {
         NavigationStack{
-            VStack{
+            ZStack {
                 
-                if(viewModel.receipes.count > 0){
-                    List(viewModel.receipes , id : \.uuid) { receipe in
-                        
-                        NavigationLink {
-                            DetailReceipeView(receipe: receipe)
-                        } label: {
-                            
-                            ReciepeRow(receipe: receipe)
-                        }
-                        
-                        .listRowSeparator(.hidden)
-                            
-                    }
-                }
-                else{
+                LinearGradient(colors: [Color(red: 0.99, green: 0.47, blue: 0.42),
+                                        Color(red: 0.97, green: 0.73, blue: 0.41)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea()
+                VStack{
                     
-                    Text("No Receipe Found - Internet issue")
-                        .padding()
-                        .font(.headline)
-                    Text("No Data Found ☹️")
-                        .padding()
-                        .font(.headline)
-                }
+                    if viewModel.receipes.count > 0 {
+                        List(viewModel.receipes , id : \.uuid) { receipe in
+                            NavigationLink {
+                                DetailReceipeView(receipe: receipe)
+                            } label: {
+                                ReciepeRow(receipe: receipe)
+                                    .background(Color.clear)
+                            }
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+
+                        }
+                        .scrollContentBackground(.hidden)
+                        .listStyle(.plain)
+                    }
+
+                    else{
+                        
+                        Text("No Receipe Found - Internet issue")
+                            .padding()
+                            .font(.headline)
+                        Text("No Data Found ☹️")
+                            .padding()
+                            .font(.headline)
+                    }
+                    
+                    
+                    
+                }.navigationTitle("Recipe List 🥙")
                 
-               
-                
-            }.navigationTitle("Recipe List 🥙")
-           
-            .listStyle(.plain)
+                    .listStyle(.plain)
+            }
             
         }.onAppear{
             Task{
